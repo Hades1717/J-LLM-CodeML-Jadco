@@ -1,0 +1,9 @@
+# Équinoxe 2026 (JADCO). Tested with Python 3.13 on Windows 11; 3.11+ should work.
+pandas==3.0.6
+numpy==2.5.3
+matplotlib==3.11.2
+pyarrow==25.0.1        # parquet files between section notebooks (data/interim/)
+nbformat==5.11.1       # scripts/assemble_notebook.py
+nbconvert==7.17.1      # executes the notebooks
+ipykernel==7.4.0
+jupyter==1.1.1

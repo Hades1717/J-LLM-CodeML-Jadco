@@ -1,0 +1,113 @@
+{
+  "forecast_year": 2026,
+  "data_cutoff": "2025-12-31",
+  "definition": "HEUC-2026: median annualised growth of effective rent between two consecutive leases of the same apartment (sPropCode + sUnitCode), leases starting in 2026, 4 segments {QC, ON} x {renewal, turnover} weighted by their expected number of pairs.",
+  "method": "w=0.5 x internal trend (3 years, recent years weigh more) + (1-w) x external anchor; converted to effective rent with the concession depth (persistence 0.5).",
+  "constants": {
+    "W_INTERNAL": 0.5,
+    "TREND_WINDOW_YEARS": 3,
+    "MIN_PAIRS_PER_SEGMENT_YEAR": 20,
+    "MIN_GAP_YEARS": 0.5,
+    "MAX_GAP_YEARS": 2.5,
+    "DEPTH_PERSISTENCE_CENTRAL": 0.5,
+    "DEPTH_PERSISTENCE_LOW": 1.0,
+    "DEPTH_PERSISTENCE_HIGH": 0.0,
+    "N_BOOTSTRAP": 1000,
+    "RANDOM_SEED": 2026
+  },
+  "segments": [
+    {
+      "province": "ON",
+      "lease_type": "renewal",
+      "weight": 0.067448,
+      "internal_trend": 0.049367,
+      "trend_pairs": 130,
+      "w_internal_used": 0.5,
+      "external_anchor": 0.040687,
+      "anchor_source": "rent CPI ON Nov 2025",
+      "depth_last_year": 0.10522,
+      "depth_forecast": 0.124654,
+      "growth_contract": 0.045027,
+      "growth_effective": 0.022329
+    },
+    {
+      "province": "ON",
+      "lease_type": "turnover",
+      "weight": 0.057813,
+      "internal_trend": 0.073519,
+      "trend_pairs": 95,
+      "w_internal_used": 0.5,
+      "external_anchor": 0.040687,
+      "anchor_source": "rent CPI ON Nov 2025",
+      "depth_last_year": 0.101425,
+      "depth_forecast": 0.123829,
+      "growth_contract": 0.057103,
+      "growth_effective": 0.030746
+    },
+    {
+      "province": "QC",
+      "lease_type": "renewal",
+      "weight": 0.54094,
+      "internal_trend": 0.04628,
+      "trend_pairs": 1004,
+      "w_internal_used": 0.5,
+      "external_anchor": 0.031,
+      "anchor_source": "TAL 2026",
+      "depth_last_year": 0.092883,
+      "depth_forecast": 0.113766,
+      "growth_contract": 0.03864,
+      "growth_effective": 0.014729
+    },
+    {
+      "province": "QC",
+      "lease_type": "turnover",
+      "weight": 0.333799,
+      "internal_trend": 0.064117,
+      "trend_pairs": 665,
+      "w_internal_used": 0.5,
+      "external_anchor": 0.082794,
+      "anchor_source": "rent CPI QC Nov 2025",
+      "depth_last_year": 0.087248,
+      "depth_forecast": 0.103071,
+      "growth_contract": 0.073456,
+      "growth_effective": 0.054847
+    }
+  ],
+  "headline_effective": 0.029559,
+  "headline_contract": 0.05176,
+  "scenarios": {
+    "low": {
+      "effective": 0.007358832138817472,
+      "contract": 0.05175974496274885
+    },
+    "central": {
+      "effective": 0.02955928855078315,
+      "contract": 0.05175974496274885
+    },
+    "high": {
+      "effective": 0.051759744962748815,
+      "contract": 0.05175974496274885
+    }
+  },
+  "strict_as_of_cutoff": {
+    "effective": 0.03695810078046664,
+    "contract": 0.05933290044944971
+  },
+  "bootstrap_interval_80": {
+    "headline_effective": {
+      "0.1": 0.029175575951505196,
+      "0.9": 0.029875702766427616
+    },
+    "headline_contract": {
+      "0.1": 0.05136817798158681,
+      "0.9": 0.052082966745078695
+    }
+  },
+  "assumptions": [
+    "Each segment moves in 2026 like the blend of its internal trend and its external anchor.",
+    "TAL 2026 calculation = 3.1% (published January 2026, after the data date: labelled choice).",
+    "The Met is exempt from Ontario's guideline (first occupied after 15 Nov 2018).",
+    "Half of the 2025 deepening of concessions repeats in 2026 (low/high scenarios: all of it / none of it).",
+    "Each province's renewal share stays at its 2025 level."
+  ]
+}

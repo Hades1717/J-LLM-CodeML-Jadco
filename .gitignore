@@ -1,0 +1,24 @@
+# CRM extract is confidential (JADCO asked that it is never shared or published)
+*.csv
+*.parquet
+*.xlsx
+*.xls
+data/raw/*
+!data/raw/README.md
+data/interim/
+# public data we collected ourselves is allowed
+!data/external/
+!data/external/*.csv
+# environment / tooling
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# internal team notes, never part of the submission
+_team/
+.claude/

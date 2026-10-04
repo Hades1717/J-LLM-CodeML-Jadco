@@ -1,0 +1,6 @@
+year,tal_unheated_base_pct,published_date,source_url,note
+2022,1.28,2022-01-19,https://www.tal.gouv.qc.ca/sites/default/files/COMMUNIQUE_FIXATION_2022_FR.pdf,"Estimation moyenne d'augmentation de base, logement non chauffé (official PDF, verified)"
+2023,2.3,2023-01,https://www.tal.gouv.qc.ca/sites/default/files/COMMUNIQUE_FIXATION_2023_FR.pdf,"Estimation moyenne d'ajustement de base, logement non chauffé (official PDF, verified)"
+2024,4.0,2024-01,https://www.tal.gouv.qc.ca/sites/default/files/COMMUNIQUE_FIXATION_2024_FR.pdf,"Estimation moyenne d'ajustement de base, logement non chauffé (official PDF, verified)"
+2025,5.9,2025-01-21,https://www.tal.gouv.qc.ca/sites/default/files/COMMUNIQUE_FIXATION_2025_FR.pdf,"verified 2026-10-04: official TAL press release 2025-01-21, Tableau 2 'Estimation moyenne d'ajustement de base', logement non chauffé = 5,9 % (old method)"
+2026,3.1,2026-01-19,https://www.tal.gouv.qc.ca/fr/reconduction-du-bail-et-fixation-de-loyer/pourcentages-applicables-aux-criteres-de-fixation-de-loyer,"verified 2026-10-04: official TAL page, 'Pourcentage de base pour le loyer' = 3,1 % (NEW method from 2026-01-01 notices: 3-year avg of Québec CPI). Same page gives 4,5 % for 2025 under the new method, so 5,9 % (old method) and 3,1 % are not the same series. Published AFTER the 2025-12-31 cutoff -> labelled central forecast only, never in backtests"
